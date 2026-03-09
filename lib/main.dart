@@ -12,6 +12,20 @@ class DevProfileApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Developer Profile',
+
+      theme: ThemeData(
+        useMaterial3: true,
+        colorSchemeSeed: Colors.indigo,
+        scaffoldBackgroundColor: const Color(0xfff5f7fb),
+
+        cardTheme: CardThemeData(
+          elevation: 3,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+        ),
+      ),
+
       home: const ProfilePage(),
     );
   }
@@ -23,34 +37,25 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[100],
-
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: const [
-              SizedBox(height: 40),
-
-              ProfileSection(),
-
-              SizedBox(height: 40),
-
-              AboutSection(),
-
-              SizedBox(height: 40),
-
-              SkillsSection(),
-
-              SizedBox(height: 40),
-
-              ProjectsSection(),
-
-              SizedBox(height: 40),
-
-              SocialLinksSection(),
-
-              SizedBox(height: 40),
-            ],
+      body: SingleChildScrollView(
+        child: Center(
+          child: Container(
+            constraints: const BoxConstraints(maxWidth: 800),
+            child: Column(
+              children: const [
+                SizedBox(height: 40),
+                ProfileSection(),
+                SizedBox(height: 40),
+                AboutSection(),
+                SizedBox(height: 40),
+                SkillsSection(),
+                SizedBox(height: 40),
+                ProjectsSection(),
+                SizedBox(height: 40),
+                SocialLinksSection(),
+                SizedBox(height: 40),
+              ],
+            ),
           ),
         ),
       ),
@@ -64,10 +69,12 @@ class ProfileSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       children: [
         CircleAvatar(
           radius: 60,
-          backgroundImage: AssetImage("assets/images/profilePhoto.jpeg"),
+          backgroundImage: const AssetImage("assets/images/profilePhoto.jpeg"),
         ),
 
         SizedBox(height: 20),
@@ -100,6 +107,7 @@ class AboutSection extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               Text(
                 "About Me",
@@ -112,7 +120,7 @@ class AboutSection extends StatelessWidget {
                 "Passionate Flutter developer learning mobile and web development. "
                 "I enjoy building clean UI and useful apps while improving my "
                 "problem solving skills.",
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.start,
                 style: TextStyle(fontSize: 16),
               ),
             ],
@@ -140,6 +148,7 @@ class SkillsSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             "Skills",
@@ -151,7 +160,7 @@ class SkillsSection extends StatelessWidget {
           Wrap(
             spacing: 10, // space between items horizontally
             runSpacing: 10, // space between rows
-            alignment: WrapAlignment.center,
+            alignment: WrapAlignment.start,
             children: skills.map((skill) {
               return Chip(
                 backgroundColor: Colors.blue.shade100,
@@ -173,6 +182,7 @@ class ProjectsSection extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
             "Projects",
@@ -212,21 +222,32 @@ class ProjectCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 4,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-            Text(
-              title,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
+    return SizedBox(
+      width: double.infinity,
+      child: Card(
+        elevation: 3,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
 
-            SizedBox(height: 8),
+              const SizedBox(height: 10),
 
-            Text(description, textAlign: TextAlign.center),
-          ],
+              Text(
+                description,
+                style: const TextStyle(fontSize: 16, color: Colors.black87),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -238,26 +259,30 @@ class SocialLinksSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text(
-          "Connect With Me",
-          style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-        ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Connect With Me",
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+          ),
 
-        const SizedBox(height: 20),
+          const SizedBox(height: 20),
 
-        Wrap(
-          spacing: 15,
-          children: [
-            ElevatedButton(onPressed: () {}, child: Text("GitHub")),
+          Wrap(
+            spacing: 15,
+            children: [
+              ElevatedButton(onPressed: () {}, child: Text("GitHub")),
 
-            ElevatedButton(onPressed: () {}, child: Text("LinkedIn")),
+              ElevatedButton(onPressed: () {}, child: Text("LinkedIn")),
 
-            ElevatedButton(onPressed: () {}, child: Text("Email")),
-          ],
-        ),
-      ],
+              ElevatedButton(onPressed: () {}, child: Text("Email")),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
