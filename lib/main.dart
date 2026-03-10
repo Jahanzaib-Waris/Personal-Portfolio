@@ -148,7 +148,10 @@ class _SectionDivider extends StatelessWidget {
           height: 1,
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.transparent, AppColors.accent.withOpacity(0.5)],
+              colors: [
+                Colors.transparent,
+                AppColors.accent.withValues(alpha: 0.5),
+              ],
             ),
           ),
         ),
@@ -160,7 +163,7 @@ class _SectionDivider extends StatelessWidget {
             shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color: AppColors.accent.withOpacity(0.6),
+                color: AppColors.accent.withValues(alpha: 0.6),
                 blurRadius: 8,
               ),
             ],
@@ -171,7 +174,10 @@ class _SectionDivider extends StatelessWidget {
             height: 1,
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [AppColors.accent.withOpacity(0.5), Colors.transparent],
+                colors: [
+                  AppColors.accent.withValues(alpha: 0.5),
+                  Colors.transparent,
+                ],
               ),
             ),
           ),
@@ -240,12 +246,12 @@ class _GlassCard extends StatelessWidget {
         border: Border.all(color: AppColors.divider, width: 1),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 8),
           ),
           BoxShadow(
-            color: AppColors.accent.withOpacity(0.04),
+            color: AppColors.accent.withValues(alpha: 0.04),
             blurRadius: 40,
             spreadRadius: 2,
           ),
@@ -299,7 +305,7 @@ class _HeroSection extends StatelessWidget {
                 shape: BoxShape.circle,
                 boxShadow: [
                   BoxShadow(
-                    color: AppColors.accent.withOpacity(0.35),
+                    color: AppColors.accent.withValues(alpha: 0.35),
                     blurRadius: 32,
                     spreadRadius: 4,
                   ),
@@ -345,7 +351,7 @@ class _HeroSection extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.accentGlow,
             borderRadius: BorderRadius.circular(20),
-            border: Border.all(color: AppColors.accent.withOpacity(0.4)),
+            border: Border.all(color: AppColors.accent.withValues(alpha: 0.4)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
@@ -358,7 +364,7 @@ class _HeroSection extends StatelessWidget {
                   shape: BoxShape.circle,
                   boxShadow: [
                     BoxShadow(
-                      color: AppColors.accent.withOpacity(0.8),
+                      color: AppColors.accent.withValues(alpha: 0.8),
                       blurRadius: 6,
                     ),
                   ],
@@ -634,7 +640,7 @@ class _SkillTile extends StatelessWidget {
         border: Border.all(color: AppColors.divider),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
+            color: Colors.black.withValues(alpha: 0.2),
             blurRadius: 10,
             offset: const Offset(0, 4),
           ),
@@ -760,7 +766,7 @@ class _ProjectCard extends StatelessWidget {
                   color: AppColors.accentGlow,
                   borderRadius: BorderRadius.circular(6),
                   border: Border.all(
-                    color: AppColors.accent.withOpacity(0.4),
+                    color: AppColors.accent.withValues(alpha: 0.4),
                     width: 1,
                   ),
                 ),
@@ -917,7 +923,7 @@ class _SocialButton extends StatelessWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.accent.withOpacity(0.35),
+              color: AppColors.accent.withValues(alpha: 0.35),
               blurRadius: 14,
               offset: const Offset(0, 5),
             ),
