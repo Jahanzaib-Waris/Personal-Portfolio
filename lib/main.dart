@@ -333,12 +333,13 @@ class _HeroSection extends StatelessWidget {
             CircleAvatar(
               radius: 66,
               backgroundColor: AppColors.surfaceAlt,
+              backgroundImage: AssetImage("assets/images/profilePhoto.jpeg"),
               // TODO: replace with real asset → backgroundImage: AssetImage("assets/images/profilePhoto.jpeg"),
-              child: const Icon(
-                Icons.person,
-                size: 64,
-                color: AppColors.textSecondary,
-              ),
+              // child: const Icon(
+              //   Icons.person,
+              //   size: 64,
+              //   color: AppColors.textSecondary,
+              // ),
             ),
           ],
         ),
@@ -423,9 +424,9 @@ class _HeroSection extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: const [
-              _StatItem(value: '2+', label: 'Years Exp.'), // ← edit
+              _StatItem(value: '1+', label: 'Years Exp.'), // ← edit
               _StatDivider(),
-              _StatItem(value: '10+', label: 'Projects'), // ← edit
+              _StatItem(value: '2+', label: 'Projects'), // ← edit
               _StatDivider(),
               _StatItem(value: '100%', label: 'Dedication'),
             ],
@@ -541,7 +542,7 @@ class _AboutSection extends StatelessWidget {
                   ), // ← edit
                   _InfoChip(
                     icon: Icons.school_outlined,
-                    label: 'Computer Science',
+                    label: 'Software Engineer',
                   ), // ← edit
                   _InfoChip(
                     icon: Icons.language,
