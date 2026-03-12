@@ -544,10 +544,7 @@ class _AboutSection extends StatelessWidget {
                     icon: Icons.school_outlined,
                     label: 'Software Engineer',
                   ), // ← edit
-                  _InfoChip(
-                    icon: Icons.language,
-                    label: 'English / Urdu',
-                  ), // ← edit
+                  _InfoChip(icon: Icons.language, label: 'English'), // ← edit
                 ],
               ),
             ],
