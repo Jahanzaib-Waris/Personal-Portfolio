@@ -35081,7 +35081,7 @@ return A.i0(A.d([B.PP,B.dv,new A.mD(A.i0(A.d([B.NA,B.vh,B.Nz,B.dv,A.aaw(B.BK,10,
 A.pk.prototype={
 N(a){return A.jT(A.d([A.S_(this.c,B.M,null,14),B.Ig,A.fM(this.d,B.MR)],t.p),B.ab,B.O,B.de,0)}}
 A.KN.prototype={
-N(a){var s=null,r=A.d([new A.iQ("Flutter",B.A4,0.9),new A.iQ("Dart",B.kr,0.85),new A.iQ("Firebase",B.A0,0.75),new A.iQ("Git",B.A2,0.8),new A.iQ("REST APIs",B.zZ,0.7),new A.iQ("UI Design",B.A6,0.65)],t.VS)
+N(a){var s=null,r=A.d([new A.iQ("Flutter",B.A4,0.9),new A.iQ("Dart",B.kr,0.85),new A.iQ("Firebase",B.A0,0.75),new A.iQ("Git",B.A2,0.8),new A.iQ("REST APIs",B.zZ,0.7),new A.iQ("UI Conversion",B.A6,0.65)],t.VS)
 return A.i0(A.d([B.PN,B.dv,new A.BA(B.xv,new A.a_s(new A.a6m(r),6,!0,!0,!0,s),s,B.au,!1,s,s,B.EM,!0,s,6,B.bi,s,s,B.aq,B.aD,s)],t.p),B.aa,B.O)}}
 A.a6m.prototype={
 $2(a,b){return new A.pF(this.a[b],null)},
