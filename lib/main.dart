@@ -592,7 +592,7 @@ class _SkillsSection extends StatelessWidget {
       _Skill('Firebase', Icons.local_fire_department, 0.75),
       _Skill('Git', Icons.merge_type, 0.80),
       _Skill('REST APIs', Icons.cloud_queue, 0.70),
-      _Skill('UI Design', Icons.brush_outlined, 0.65),
+      _Skill('UI Conversion', Icons.brush_outlined, 0.65),
     ];
 
     return Column(
